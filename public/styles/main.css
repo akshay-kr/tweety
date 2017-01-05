@@ -1,6 +1,7 @@
 body{
     background-color: #f5f8fa!important;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
 }
 *,
 *:before,
@@ -572,6 +573,12 @@ button {
 .center {
   text-align: center;
 }
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
 .screen-name {
     font-size: 20px;
 }
@@ -592,4 +599,98 @@ button {
     padding-top: 3px;
     font-weight: 500;
     color: #009999;
+}
+.tweet-item{
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    margin-bottom: -2px;
+    padding: 5px 10px;
+    z-index: -;
+}
+.top-radius-5{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tweet-item .nav-d{
+    font-weight: 300;
+}
+.tweet-item .name{
+    font-weight: bold;
+    color: #292f33;
+}
+.tweet-item .username{
+    font-size: 13px;
+    color: #8899a6;
+}
+.tweet-item .time{
+    font-size: 13px;
+    color: #8899a6;
+}
+.tweet-item .hash{
+    font-wight: 400;
+    color: #009999;
+}
+.tweet-item .msg{
+    padding-top: 5px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+}
+.link{
+    color: #009999;
+}
+.margin-0{
+    margin-right: 0;
+    margin-left: 0;
+}
+.sm-image{
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+}
+.md-image{
+    width: 210px;
+    height: 210px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -92px;
+    z-index: 999;
+    margin-left: 4vw;
+    border:5px solid #fff;
+}
+.mar-right-n-15{
+    margin-right: -15px !important;
+}
+.pad-bottom-15{
+    padding-bottom: 15px !important;
+}
+.lg-name{
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    word-wrap: break-word;
+}
+.lg-username{
+    font-size: 14px;
+    color: #8899a6;
+}
+.bg-white{
+  background-color: white;
+}
+.info-icon{
+  font-size: 18px;
+  color: #8899a6;
+}
+.action{
+  color: #aab8c2;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 6px;
+  position: relative;
+}
+.pad-10{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

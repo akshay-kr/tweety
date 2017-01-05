@@ -1,33 +1,38 @@
 <div class="row">
 	<div class="col-12">
-		<img ng-src="{{userInfo.profile_banner_url}}" class="banner"></div>
+		<img ng-src="{{userInfo.profile_banner_url}}" class="banner">
+		<img ng-src="{{parseImageUrl(userInfo.profile_image_url)}}" class="md-image"></div>
 </div>
-<div class="row" style="background-color: white">
+<div class="row bg-white">
 	<div class="col-12">
 		<div class="row">
-			<div class="col-4 push-4">
+			<div class="col-4 push-3">
 				<div class="row">
 					<div class="col-2 center">
 						<div class="nav">
-							<span class="nav-n">TWEETS</span><br>
+							<span class="nav-n">TWEETS</span>
+							<br>
 							<span class="nav-d">{{format(userInfo.statuses_count)}}</span>
 						</div>
 					</div>
-					<div class="col-2 center">
+					<div class="col-3 center">
 						<div class="nav">
-							<span class="nav-n">FOLLOWING</span><br>
+							<span class="nav-n">FOLLOWING</span>
+							<br>
 							<span class="nav-d">{{format(userInfo.friends_count)}}</span>
 						</div>
 					</div>
-					<div class="col-2 center">
+					<div class="col-3 center">
 						<div class="nav">
-							<span class="nav-n">FOLLOWERS</span><br>
+							<span class="nav-n">FOLLOWERS</span>
+							<br>
 							<span class="nav-d">{{format(userInfo.followers_count)}}</span>
 						</div>
 					</div>
 					<div class="col-2 center">
 						<div class="nav">
-							<span class="nav-n">LIKES</span><br>
+							<span class="nav-n">LIKES</span>
+							<br>
 							<span class="nav-d">{{format(userInfo.favourites_count)}}</span>
 						</div>
 					</div>
@@ -35,4 +40,95 @@
 			</div>
 		</div>
 	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-3">
+		<br>
+		<br>
+		<div style="margin-left: 4vw">
+			<span class="lg-name">{{userInfo.name}}</span>
+			<br>
+			<span class="lg-username">@{{userInfo.screen_name}}</span>
+			<br>
+			<br>
+			<div ng-if="userInfo.description">
+				<span >{{userInfo.description}}</span>
+				<br>
+				<br></div>
+			<div ng-if="userInfo.location!==''"> <i class="fa fa-map-marker info-icon" aria-hidden="true"></i>
+				&nbsp;&nbsp;
+				<span class="location">{{userInfo.location}}</span>
+			</div>
+			<br>
+			<div ng-if="userInfo.entities.url.urls[0].display_url!==''"> <i class="fa fa-link info-icon" aria-hidden="true"></i>
+				&thinsp;
+				<span class="link">{{userInfo.entities.url.urls[0].display_url}}</span>
+				<br></div>
+			<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+			&thinsp;
+			<span>
+				Joined {{formatDate(userInfo.created_at) | date:'MMMM yyyy'}}
+			</span>
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="row">
+			<div class="tweet-item top-radius-5">
+				<div class="row">
+					<div class="col-2 center">
+						<div class="nav">
+							<span class="nav-d">Tweets</span>
+						</div>
+					</div>
+					<div class="col-3 center">
+						<div class="nav">
+							<span class="nav-d">Tweets & replies</span>
+						</div>
+					</div>
+					<div class="col-2 center">
+						<div class="nav">
+							<span class="nav-d">Media</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" ng-repeat="tweet in timeline">
+			<div class="tweet-item">
+				<div class="row">
+					<div class="col-1-hd col-2-desktop">
+						<img ng-src="{{tweet.user.profile_image_url}}" class="sm-image"></div>
+					<div class="col-11-hd col-10-desktop">
+						<div class="row margin-0">
+							<div class="col-12">
+								<span class="name">{{tweet.user.name}}</span>
+								&thinsp;
+								<span class="username">@{{tweet.user.screen_name}}</span>
+								&thinsp;.&thinsp;
+								<span class="time">{{formatDate(tweet.created_at) | date:'d MMM yyyy'}}</span>
+							</div>
+						</div>
+						<div class="row margin-0">
+							<div class="col-12">
+								<span class="msg" >{{formatMsg(tweet.text,tweet.entities)}}</span>
+							</div>
+						</div>
+						<div class="row margin-0 pad-10">
+							<div class="col-2">
+								<i class="fa fa-reply action" aria-hidden="true">&nbsp;124</i>
+							</div>
+							<div class="col-2">
+								<i class="fa fa-retweet action" aria-hidden="true">&nbsp;{{format(tweet.retweet_count)}}</i>
+							</div>
+							<div class="col-2">
+								<i class="fa fa-heart action" aria-hidden="true">&nbsp;{{format(tweet.favorite_count)}}</i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-3">&nbsp;</div>
 </div>
