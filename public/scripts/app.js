@@ -3,7 +3,7 @@
 (function () {
 
     'use strict';
-    var app = angular.module('tweetyApp', ['ngRoute', 'ui.router']);
+    var app = angular.module('tweetyApp', ['ui.router']);
     app.constant('baseUrl', 'http://localhost:9030');
     app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
