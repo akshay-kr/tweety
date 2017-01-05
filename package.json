@@ -1,0 +1,29 @@
+{
+  "name": "tweety_api",
+  "version": "1.0.0",
+  "description": "Twitter Timeline Implementation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akshay1706/tweety"
+  },
+  "author": "Akshay Kumar",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/akshay1706/tweety/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "~1.7.9",
+    "cors": "~2.7.1",
+    "express": "~4.14.0",
+    "mongodb": "~2.1.18",
+    "oauth": "^0.9.14",
+    "q": "~1.4.1",
+    "twitter": "^1.7.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"port": 9030,
+	"twitter": {
+		"consumer_key": "VNL8JanQ34lOWy65LwrBFc9SJ",
+		"consumer_secret": "FThbGiyvW9HyPrjPVD7ybdtl7ajxJAmnPfcXD2sCnPPKPoQAVz"
+	},
+	"mongo": {
+		"connUrl": "mongodb://localhost:27017/tweety",
+		"collection": "users"
+	}
+}

@@ -1,0 +1,34 @@
+<br>
+<div class="row">
+	<div class="col-12 col-6-tablet push-3-tablet">
+		<div class="card">
+			<div class="content">
+				<ng-form name="userForm">
+					<div class="row">
+						<div class="col-9">
+							<input type="text" name="screen-name" ng-model="screenName" placeholder="Enter screen name" required></div>
+						<div class="col-3">
+							<button class="button-green button-small" ng-click="add()" ng-disabled="userForm.$invalid || adding">
+								<span ng-show="adding"> <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+									&nbsp;
+								</span>
+								Add
+							</button>
+						</div>
+					</div>
+				</ng-form>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<div class="row">
+	<div class="col-12 col-3-tablet" ng-repeat="user in users">
+		<div class="card" ng-click="openUser(user.screenName)" style="cursor:pointer;">
+			<div class="content center">
+				<p class="screen-name">@{{user.screenName}}</p>
+			</div>
+		</div>
+	</div>
+</div>
