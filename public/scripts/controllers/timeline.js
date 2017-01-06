@@ -42,7 +42,8 @@ angular.module('tweetyApp')
 			};
 			tweet.user = {
 				screen_name: $scope.userInfo.screen_name,
-				name: $scope.userInfo.name
+				name: $scope.userInfo.name,
+				profile_image_url:$scope.userInfo.profile_image_url
 			};
 			$scope.timeline.unshift(tweet);
 			$scope.newTweet = '';
