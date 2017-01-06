@@ -51,6 +51,7 @@ app.get('/info/:screenname', function (req, res) {
 function getTweets(screenName) {
 	var deferred = q.defer();
 	client.get('statuses/user_timeline', {
+		tweet_mode:'extended',
 		screen_name: screenName
 	}, function (error, tweets) {
 		if (!error) {

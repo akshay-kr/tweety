@@ -23,6 +23,7 @@ angular.module('tweetyApp')
 						screenName: $scope.screenName
 					};
 					$scope.users.push(user);
+					$scope.screenName = "";
 				})
 				.error(function (err) {
 					console.log(err);
